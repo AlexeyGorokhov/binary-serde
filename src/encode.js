@@ -2,18 +2,10 @@
 
 const getTypeOfDataChunk = require('./get-type-of-data-chunk');
 const concatenateBuffers = require('./concatenate-buffers');
-const decodeElement = require('./decode-element');
 
-const _textEncoder = new TextEncoder();
+const textEncoder = new TextEncoder();
 
-module.exports = {
-  encode,
-  decode,
-  stringToBuffer,
-  bufferToString
-};
-
-function encode (data) {
+module.exports = function encode (data) {
   const chunkDataType = getTypeOfDataChunk(data);
 
   switch (chunkDataType) {
@@ -125,7 +117,7 @@ function encode (data) {
     }
 
     case 'string': {
-      const encodedString = _textEncoder.encode(data);
+      const encodedString = textEncoder.encode(data);
 
       if (encodedString.length <= 31) {
         const result = new Uint8Array(encodedString.length + 1);
@@ -209,27 +201,4 @@ function encode (data) {
     case 'date':
       return encode(data.toISOString());
   }
-}
-
-function decode (buff) {
-  const { data } = decodeElement(buff);
-  return data;
-}
-
-function stringToBuffer (str) {
-  const buff = new Uint8Array(Math.floor(str.length / 2));
-
-  for (let i = 0; i < str.length; i += 1) {
-    if (i % 2 === 0) continue;
-
-    buff[(i - 1) / 2] = Number.parseInt(str[i - 1] + str[i], 16);
-  }
-
-  return buff;
-}
-
-function bufferToString (buff) {
-  return [...buff]
-    .map(byte => byte.toString(16).padStart(2, '0'))
-    .join('');
-}
+};

@@ -7,7 +7,7 @@ const {
   decode,
   stringToBuffer,
   bufferToString
-} = require('../src/index');
+} = require('../index');
 
 const getArray = len => Array(len).fill(1);
 

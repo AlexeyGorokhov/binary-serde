@@ -2,7 +2,7 @@
 
 const detectChunkDataType = require('./detect-chunk-data-type');
 
-const _textDecoder = new TextDecoder('utf-8');
+const textDecoder = new TextDecoder('utf-8');
 
 module.exports = function decodeElement (buff, offset = 0) {
   let currOffset = offset;
@@ -52,7 +52,7 @@ module.exports = function decodeElement (buff, offset = 0) {
 
     case 'string':
       return {
-        data: _textDecoder.decode(buff.subarray(currOffset, currOffset + bytes)),
+        data: textDecoder.decode(buff.subarray(currOffset, currOffset + bytes)),
         nextOffset: currOffset + bytes
       };
 
