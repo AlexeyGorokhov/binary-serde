@@ -1,0 +1,20 @@
+{
+  "name": "binary-serde",
+  "version": "0.0.0",
+  "description": "Binary Javascript serializer/deserializer based on MessagePack",
+  "main": "index.js",
+  "scripts": {
+    "test": "semistandard --verbose | snazzy && tape 'test/**/*.test.js' | tap-summary"
+  },
+  "author": {
+    "name": "Alexey Gorokhov",
+    "email": "alexey.gorokhov@icloud.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "semistandard": "^16.0.0",
+    "snazzy": "^9.0.0",
+    "tap-summary": "^4.0.0",
+    "tape": "^5.0.1"
+  }
+}
