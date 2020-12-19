@@ -1,9 +1,19 @@
 'use strict';
 
-const detectChunkDataType = require('./detect-chunk-data-type');
+const decodeChunk = require('./decode-chunk');
 
 const textDecoder = new TextDecoder('utf-8');
 
+/**
+ * Decode passed Uint8Array buffer into a JS entity
+ *
+ * @param {Uint8Array} buff
+ * @param {Integer} offset
+ *
+ * @return {Object}
+ *     @prop {*} data
+ *     @prop {Integer} nextOffset
+ */
 module.exports = function decodeElement (buff, offset = 0) {
   let currOffset = offset;
 
@@ -13,7 +23,7 @@ module.exports = function decodeElement (buff, offset = 0) {
     value,
     elementsCount,
     offsetDelta
-  } = detectChunkDataType(buff, currOffset);
+  } = decodeChunk(buff, currOffset);
 
   currOffset += offsetDelta;
 

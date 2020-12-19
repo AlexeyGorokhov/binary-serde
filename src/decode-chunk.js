@@ -3,13 +3,19 @@
 const dataTypes = require('./data-types');
 
 /**
+ * Decode a particular chunk of data
  *
  * @param {Uint8Array} buff
  * @param {Integer} offset
  *
  * @return {Object}
+ *     @prop {String} type Type of the chunk
+ *     @prop {Integer} offsetDelta How many bytes the chunk occupies
+ *     @prop {Integer?} bytes How many bytes the string encoded data occupies
+ *     @prop {Number?} value Decoded numerical value
+ *     @prop {Integer?} elementsCount Number of elements in a compound data structure
  */
-module.exports = function detectChunkDataType (buff, offset) {
+module.exports = function decodeChunk (buff, offset) {
   const byte = buff[offset];
 
   const dataType = dataTypes.find(type => (byte & type.mask) === type.pattern);
@@ -33,7 +39,6 @@ module.exports = function detectChunkDataType (buff, offset) {
     case 'positivefixnum':
       return {
         type: 'int',
-        bytes: 0,
         value: byte & dataType.argMask,
         offsetDelta: 1
       };

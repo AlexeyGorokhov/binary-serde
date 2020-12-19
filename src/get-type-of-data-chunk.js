@@ -1,5 +1,12 @@
 'use string';
 
+/**
+ * Determine type of data
+ *
+ * @param {*} data
+ *
+ * @return {String}
+ */
 module.exports = function getTypeOfDataChunk (data) {
   if (data === null) {
     return 'null';

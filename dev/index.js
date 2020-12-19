@@ -5,7 +5,7 @@ const {
   decode,
   bufferToString,
   stringToBuffer
-} = require('../src');
+} = require('../');
 
 const data = 1;
 

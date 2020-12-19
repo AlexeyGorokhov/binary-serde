@@ -1,5 +1,12 @@
 'use strict';
 
+/**
+ * Decode HEX-encoded string into Uint8Array buffer
+ *
+ * @param {String} str
+ *
+ * @return {Uint8Array}
+ */
 module.exports = function stringToBuffer (str) {
   const buff = new Uint8Array(Math.floor(str.length / 2));
 

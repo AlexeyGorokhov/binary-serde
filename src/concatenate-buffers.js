@@ -1,5 +1,12 @@
 'use strict';
 
+/**
+ * Concatenate passed Uint8Array buffers
+ *
+ * @param  {...Uint8Array} buffers
+ *
+ * @return {Uint8Array}
+ */
 module.exports = function concatenateBuffers (...buffers) {
   let totalLength = 0;
 

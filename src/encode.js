@@ -5,6 +5,15 @@ const concatenateBuffers = require('./concatenate-buffers');
 
 const textEncoder = new TextEncoder();
 
+/**
+ * Encode data
+ *
+ * Called recursively for compound data types
+ *
+ * @param {*} data
+ *
+ * @return {Uint8Array}
+ */
 module.exports = function encode (data) {
   const chunkDataType = getTypeOfDataChunk(data);
 

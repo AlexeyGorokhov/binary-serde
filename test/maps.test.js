@@ -7,7 +7,7 @@ const {
   decode,
   stringToBuffer,
   bufferToString
-} = require('../index');
+} = require('../');
 
 const getMap = len => {
   const map = {};

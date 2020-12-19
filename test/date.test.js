@@ -7,7 +7,7 @@ const {
   decode,
   stringToBuffer,
   bufferToString
-} = require('../index');
+} = require('../');
 
 test('date', t => {
   const ISOString = '2020-12-20T10:45:12.000Z';

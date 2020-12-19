@@ -7,7 +7,7 @@ const {
   decode,
   stringToBuffer,
   bufferToString
-} = require('../index');
+} = require('../');
 
 const cases = [
   ['complex', require('./data/complex.json')]

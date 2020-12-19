@@ -7,7 +7,7 @@ const {
   decode,
   stringToBuffer,
   bufferToString
-} = require('../index');
+} = require('../');
 
 const getString = len => ('a').repeat(len);
 
