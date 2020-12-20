@@ -2,7 +2,6 @@
   "name": "binary-serde",
   "version": "0.0.0",
   "description": "Binary Javascript serializer/deserializer based on MessagePack",
-  "main": "index.js",
   "scripts": {
     "test": "semistandard --verbose | snazzy && tape 'test/**/*.test.js' | tap-summary"
   },
@@ -10,7 +9,23 @@
     "name": "Alexey Gorokhov",
     "email": "alexey.gorokhov@icloud.com"
   },
+  "homepage": "https://github.com/AlexeyGorokhov/binary-serde",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexeyGorokhov/binary-serde"
+  },
+  "bugs": {
+    "url": "https://github.com/AlexeyGorokhov/binary-serde/issues"
+  },
   "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "MessagePack",
+    "binary serialization"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
   "devDependencies": {
     "semistandard": "^16.0.0",
     "snazzy": "^9.0.0",
