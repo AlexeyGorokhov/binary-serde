@@ -18,7 +18,8 @@
     "url": "https://github.com/AlexeyGorokhov/binary-serde/issues"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "keywords": [
     "MessagePack",
     "binary serialization"
