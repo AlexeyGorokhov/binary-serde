@@ -112,10 +112,10 @@ module.exports = function encode (data) {
       }
 
       if (data < Number.MIN_SAFE_INTEGER) {
-        throw new Error('integer is too small for serialization');
+        throw new Error('binary-serde:integer is too small for serialization');
       }
 
-      throw new Error('integer is too large for serialization');
+      throw new Error('binary-serde:integer is too large for serialization');
     }
 
     case 'float': {
@@ -152,7 +152,7 @@ module.exports = function encode (data) {
         return result;
       }
 
-      throw new Error('string is too large for serialization');
+      throw new Error('binary-serde:string is too large for serialization');
     }
 
     case 'array': {
@@ -174,7 +174,7 @@ module.exports = function encode (data) {
         return concatenateBuffers(prefixBuff, ...elementBuffs);
       }
 
-      throw new Error('array is too large for serialization');
+      throw new Error('binary-serde:array is too large for serialization');
     }
 
     case 'map': {
@@ -204,7 +204,7 @@ module.exports = function encode (data) {
         return concatenateBuffers(prefixBuff, ...elementBuffs);
       }
 
-      throw new Error('object is too large for serialization');
+      throw new Error('binary-serde: object is too large for serialization');
     }
 
     case 'date':

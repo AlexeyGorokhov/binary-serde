@@ -147,6 +147,6 @@ module.exports = function decodeChunk (buff, offset) {
         offsetDelta: 3
       };
     default:
-      throw new Error('unknown data type');
+      throw new Error('binary-serde: unknown data type');
   }
 };

@@ -45,6 +45,6 @@ module.exports = function getTypeOfDataChunk (data) {
       return 'float';
     }
 
-    throw new Error('non-serializable number');
+    throw new Error('binary-serde: non-serializable number');
   }
 };
