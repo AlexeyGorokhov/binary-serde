@@ -112,10 +112,10 @@ module.exports = function encode (data) {
       }
 
       if (data < Number.MIN_SAFE_INTEGER) {
-        throw new Error('binary-serde:integer is too small for serialization');
+        throw new Error('binary-serde: integer is too small for serialization');
       }
 
-      throw new Error('binary-serde:integer is too large for serialization');
+      throw new Error('binary-serde: integer is too large for serialization');
     }
 
     case 'float': {
