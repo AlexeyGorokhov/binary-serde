@@ -115,7 +115,7 @@ const dataTypes = [
   },
   {
     name: 'fixmap',
-    mask: 0b1111_0000,
+    mask: 0b11110000,
     pattern: 0b10000000,
     argMask: 0b00001111
   },
