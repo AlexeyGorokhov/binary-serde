@@ -19,15 +19,15 @@ const dataTypes = [
   },
   {
     name: 'positivefixnum',
-    mask: 0b1000_0000,
-    pattern: 0b0000_0000,
-    argMask: 0b0111_1111
+    mask: 0b10000000,
+    pattern: 0b00000000,
+    argMask: 0b01111111
   },
   {
     name: 'negativefixnum',
-    mask: 0b1110_0000,
-    pattern: 0b1110_0000,
-    argMask: 0b0001_1111
+    mask: 0b11100000,
+    pattern: 0b11100000,
+    argMask: 0b00011111
   },
   {
     name: 'uint8',
@@ -85,9 +85,9 @@ const dataTypes = [
   },
   {
     name: 'fixstr',
-    mask: 0b1110_0000,
-    pattern: 0b1010_0000,
-    argMask: 0b0001_1111
+    mask: 0b11100000,
+    pattern: 0b10100000,
+    argMask: 0b00011111
   },
   {
     name: 'str8',
@@ -103,9 +103,9 @@ const dataTypes = [
   },
   {
     name: 'fixarray',
-    mask: 0b1111_0000,
-    pattern: 0b1001_0000,
-    argMask: 0b0000_1111
+    mask: 0b11110000,
+    pattern: 0b10010000,
+    argMask: 0b00001111
   },
   {
     name: 'array16',
@@ -116,8 +116,8 @@ const dataTypes = [
   {
     name: 'fixmap',
     mask: 0b1111_0000,
-    pattern: 0b1000_0000,
-    argMask: 0b0000_1111
+    pattern: 0b10000000,
+    argMask: 0b00001111
   },
   {
     name: 'map16',
