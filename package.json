@@ -1,6 +1,6 @@
 {
   "name": "binary-serde",
-  "version": "0.0.0",
+  "version": "0.1.2",
   "description": "Binary Javascript serializer/deserializer based on MessagePack",
   "scripts": {
     "test": "semistandard --verbose | snazzy && tape 'test/**/*.test.js' | tap-summary"
