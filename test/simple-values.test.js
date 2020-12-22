@@ -113,3 +113,14 @@ test('string is too large', t => {
     t.end();
   }
 });
+
+test('undefined', t => {
+  const encodedBinData = encode(undefined);
+  const encodedStr = bufferToString(encodedBinData);
+  const decodedBinData = stringToBuffer(encodedStr);
+  const result = decode(decodedBinData);
+
+  t.equal(result, null, 'should serialize to null');
+
+  t.end();
+});

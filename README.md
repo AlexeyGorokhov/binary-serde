@@ -17,6 +17,8 @@ _Important!_ This is NOT a full MessagePack implementation. The main motivation 
 
 * Maximum number of top-level properties of an object is (2^16 - 1).
 
+* Value `undefined` is serialized into value `null`.
+
 
 ### Floating point numbers
 

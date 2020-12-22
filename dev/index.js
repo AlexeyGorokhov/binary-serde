@@ -7,7 +7,7 @@ const {
   stringToBuffer
 } = require('../');
 
-const data = 1;
+const data = require('../test/data/state.json');
 
 console.log('\nInitial value:');
 console.log(data);
