@@ -39,13 +39,13 @@ module.exports = function encode (data) {
     case 'int': {
       if (data >= 0 && data <= 127) {
         const result = new Uint8Array(1);
-        result[0] = 0b0000_0000 + data;
+        result[0] = 0b00000000 + data;
         return result;
       }
 
       if (data < 0 && data >= -31) {
         const result = new Uint8Array(1);
-        result[0] = 0b1110_0000 + (-data);
+        result[0] = 0b11100000 + (-data);
         return result;
       }
 
@@ -130,7 +130,7 @@ module.exports = function encode (data) {
 
       if (encodedString.length <= 31) {
         const result = new Uint8Array(encodedString.length + 1);
-        result[0] = 0b1010_0000 + encodedString.length;
+        result[0] = 0b10100000 + encodedString.length;
         result.set(encodedString, 1);
         return result;
       }
@@ -160,7 +160,7 @@ module.exports = function encode (data) {
 
       if (len <= 15) {
         const prefixBuff = new Uint8Array(1);
-        prefixBuff[0] = 0b1001_0000 + len;
+        prefixBuff[0] = 0b10010000 + len;
         const elementBuffs = data.map(x => encode(x));
         return concatenateBuffers(prefixBuff, ...elementBuffs);
       }
@@ -182,7 +182,7 @@ module.exports = function encode (data) {
 
       if (len <= 15) {
         const prefixBuff = new Uint8Array(1);
-        prefixBuff[0] = 0b1000_0000 + len;
+        prefixBuff[0] = 0b10000000 + len;
         const elementBuffs = Object.keys(data).map(key => {
           const keyBuff = encode(key);
           const valueBuff = encode(data[key]);

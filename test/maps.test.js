@@ -23,7 +23,10 @@ const cases = [
   ['fixmap > in-range', getMap(2)],
   ['map16 > min', getMap(16)],
   ['map16 > max', getMap((2 ** 16) - 1)],
-  ['map16 > in-range', getMap(30)]
+  ['map16 > in-range', getMap(30)],
+  ['map-with-empty-map', { prop: {} }],
+  ['map-with-empty-array', { prop: [] }],
+  ['map-with-empty-string', { prop: '' }]
 ];
 
 for (const c of cases) {

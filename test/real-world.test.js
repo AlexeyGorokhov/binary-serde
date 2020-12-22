@@ -10,7 +10,8 @@ const {
 } = require('../');
 
 const cases = [
-  ['complex', require('./data/complex.json')]
+  ['complex', require('./data/complex.json')],
+  ['state', require('./data/state.json')]
 ];
 
 for (const c of cases) {

@@ -8,7 +8,7 @@
  * @return {String}
  */
 module.exports = function getTypeOfDataChunk (data) {
-  if (data === null) {
+  if (data == null) {
     return 'null';
   }
 
@@ -32,7 +32,7 @@ module.exports = function getTypeOfDataChunk (data) {
     return 'date';
   }
 
-  if (typeof data === 'object' && data !== null) {
+  if (typeof data === 'object') {
     return 'map';
   }
 
